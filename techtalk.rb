@@ -53,9 +53,11 @@ end
 def o8_hashes
   h = { 'a' => 1, 'b' => 2 }
 
-  puts (h.transform_keys! do |key|
+  puts (h.transform_keys do |key|
     key.to_sym
   end)
+
+  puts h.transform_keys!(&:to_sym)
 
   puts h.slice(:a)
 end
