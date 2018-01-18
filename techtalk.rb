@@ -61,9 +61,10 @@ def o8_hashes
 end
 
 def o9_dir
-  puts Dir.entries './'
-  puts Dir.children './'
-  puts Dir.each_child('./').to_a
+  # Note that pp is required by default
+  pp Dir.entries './'
+  pp Dir.children './'
+  pp Dir.each_child('./').to_a
 end
 
 def o10_enum_pattern
