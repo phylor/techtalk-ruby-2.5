@@ -72,8 +72,10 @@ end
 def o10_enum_pattern
   strs = ['abc', 'def', 'ghi']
 
+  # strs.any? { |str| /g/ === str }
   puts strs.any?(/g/)
   puts strs.all?(/g/)
   puts strs.none?(/q/)
+  # strs.all? { |str| String === str }
   puts strs.all?(String)
 end
