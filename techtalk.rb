@@ -43,18 +43,34 @@ def o6_strings
 end
 
 def o7_arrays
+  # new alias for unshift
   [3, 4].prepend(1, 2)
+
+  # new alias for push
   [3, 4].append(1, 2)
 end
 
 def o8_hashes
-  puts ({ 'a' => 1, 'b' => 2 }.transform_keys do |key|
+  h = { 'a' => 1, 'b' => 2 }
+
+  puts (h.transform_keys! do |key|
     key.to_sym
   end)
+
+  puts h.slice(:a)
 end
 
 def o9_dir
   puts Dir.entries './'
   puts Dir.children './'
   puts Dir.each_child('./').to_a
+end
+
+def o10_enum_pattern
+  strs = ['abc', 'def', 'ghi']
+
+  puts strs.any?(/g/)
+  puts strs.all?(/g/)
+  puts strs.none?(/q/)
+  puts strs.all?(String)
 end
